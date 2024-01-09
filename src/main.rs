@@ -1,4 +1,4 @@
-use crate::repository::file::{read_file, write_file};
+use crate::repository::infrastructure::{read_file, write_file};
 
 mod repository;
 fn main() {

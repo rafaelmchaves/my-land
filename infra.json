@@ -1,5 +1,115 @@
-{
-    "id": "1",
-    "name": "Small Hospital",
-    "cost": 3000.00
-}
+[
+    {
+        "id": "1",
+        "name": "Small Hospital",
+        "cost": 3000.00,
+        "infra_type": "Hospital",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 5,
+        "effect_time": 6,
+        "ranking_effects": [
+            {
+                "index": "HEALTH_INDEX",
+                "score": 5.23
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Big Hospital",
+        "cost": 10000.00,
+        "infra_type": "Hospital",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 10,
+        "effect_time": 5,
+        "ranking_effects": [
+            {
+                "index": "HEALTH_INDEX",
+                "score": 10.23
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Disease Research Building",
+        "cost": 100000.00,
+        "infra_type": "Hospital",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 8,
+        "effect_time": 16,
+        "ranking_effects": [
+            {
+                "index": "HEALTH_INDEX",
+                "score": 22.23
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Elementary School",
+        "cost": 1000.00,
+        "infra_type": "School",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 5,
+        "effect_time": 5,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 1
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "High School",
+        "cost": 10000.00,
+        "infra_type": "School",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 7,
+        "effect_time": 5,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 1.75
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "name": "College - Law, Business and economic courses",
+        "cost": 7000.00,
+        "infra_type": "College",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 8,
+        "effect_time": 30,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 3
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "name": "College - Engineering School",
+        "cost": 20000.00,
+        "infra_type": "College",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 13,
+        "effect_time": 30,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    }
+    
+]
