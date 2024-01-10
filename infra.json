@@ -8,6 +8,7 @@
         "amount_name": "unit",
         "building_time": 5,
         "effect_time": 6,
+        "monthly_cost": 4000.00,
         "ranking_effects": [
             {
                 "index": "HEALTH_INDEX",
@@ -24,6 +25,7 @@
         "amount_name": "unit",
         "building_time": 10,
         "effect_time": 5,
+        "monthly_cost": 4000.00,
         "ranking_effects": [
             {
                 "index": "HEALTH_INDEX",
@@ -40,6 +42,7 @@
         "amount_name": "unit",
         "building_time": 8,
         "effect_time": 16,
+        "monthly_cost": 4000.00,
         "ranking_effects": [
             {
                 "index": "HEALTH_INDEX",
@@ -56,6 +59,7 @@
         "amount_name": "unit",
         "building_time": 5,
         "effect_time": 5,
+        "monthly_cost": 4000.00,
         "ranking_effects": [
             {
                 "index": "EDUCATION_INDEX",
@@ -72,6 +76,7 @@
         "amount_name": "unit",
         "building_time": 7,
         "effect_time": 5,
+        "monthly_cost": 4000.00,
         "ranking_effects": [
             {
                 "index": "EDUCATION_INDEX",
@@ -88,6 +93,7 @@
         "amount_name": "unit",
         "building_time": 8,
         "effect_time": 30,
+        "monthly_cost": 4000.00,
         "ranking_effects": [
             {
                 "index": "EDUCATION_INDEX",
@@ -104,6 +110,7 @@
         "amount_name": "unit",
         "building_time": 13,
         "effect_time": 30,
+        "monthly_cost": 4000.00,
         "ranking_effects": [
             {
                 "index": "EDUCATION_INDEX",

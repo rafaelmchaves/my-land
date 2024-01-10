@@ -8,6 +8,7 @@ pub struct Infrastructure {
     amount: f64,
     amount_name: String,
     cost: f64,
+    montlhy_cost: f64,
     building_time: i8,
     effect_time: i8,
     ranking_effects: Vec<RankingEffect>
