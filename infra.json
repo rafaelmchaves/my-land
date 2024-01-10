@@ -14,7 +14,9 @@
                 "index": "HEALTH_INDEX",
                 "score": 5.23
             }
-        ]
+        ],
+        "description": "Small size hospital",
+        "max_usage": 100
     },
     {
         "id": "2",
@@ -31,7 +33,9 @@
                 "index": "HEALTH_INDEX",
                 "score": 10.23
             }
-        ]
+        ],
+        "description": "Big size hospital",
+        "max_usage": 3000
     },
     {
         "id": "3",
@@ -48,7 +52,9 @@
                 "index": "HEALTH_INDEX",
                 "score": 22.23
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "4",
@@ -65,7 +71,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 1
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "5",
@@ -82,7 +90,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 1.75
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "6",
@@ -99,7 +109,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 3
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "7",
@@ -116,7 +128,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "7",
@@ -133,7 +147,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "7",
@@ -150,7 +166,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "7",
@@ -167,7 +185,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "7",
@@ -184,7 +204,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },{
         "id": "7",
         "name": "Technological Research Center",
@@ -200,7 +222,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "8",
@@ -217,7 +241,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "9",
@@ -234,7 +260,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -251,7 +279,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -268,7 +298,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -285,7 +317,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -302,7 +336,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -319,7 +355,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -336,7 +374,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -353,7 +393,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -370,7 +412,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -387,13 +431,15 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
         "name": "Patent Organization",
         "cost": 1000.00,
-        "infra_type": "BurecracyDepartment",
+        "infra_type": "BureaucracyDepartment",
         "amount": 1,
         "amount_name": "unit",
         "building_time": 4,
@@ -404,13 +450,15 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
         "name": "Company Registration",
         "cost": 1000.00,
-        "infra_type": "BurecracyDepartment",
+        "infra_type": "BureaucracyDepartment",
         "amount": 1,
         "amount_name": "unit",
         "building_time": 4,
@@ -421,7 +469,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -438,7 +488,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -455,7 +507,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -472,7 +526,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -489,7 +545,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -506,7 +564,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -523,7 +583,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -540,7 +602,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -557,7 +621,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -574,7 +640,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -591,7 +659,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -608,7 +678,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -625,7 +697,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -642,7 +716,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -659,7 +735,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -676,7 +754,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -693,7 +773,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -710,7 +792,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -727,7 +811,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -744,7 +830,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     },
     {
         "id": "10",
@@ -761,7 +849,9 @@
                 "index": "EDUCATION_INDEX",
                 "score": 5
             }
-        ]
+        ],
+        "description": "",
+        "max_usage": 3000
     }
     
 ]

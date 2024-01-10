@@ -9,9 +9,11 @@ pub struct Infrastructure {
     amount_name: String,
     cost: f64,
     monthly_cost: f64,
-    building_time: i8,
-    effect_time: i8,
-    ranking_effects: Vec<RankingEffect>
+    building_time: u8,
+    effect_time: u8,
+    ranking_effects: Vec<RankingEffect>,
+    description: String,
+    max_usage: u32 //max number of people that this infrastructure supports
 }
 
 #[derive(Deserialize, Serialize)]
@@ -25,9 +27,9 @@ pub enum InfraType {
     University,
     Cemitery,
     FireDepartment,
-    PoliceStation,
+    Police,
     Justice,
-    BurocracyDepartment,
+    BureaucracyDepartment,
     Airport,
     Port,
     Toll,
