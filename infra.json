@@ -117,6 +117,651 @@
                 "score": 5
             }
         ]
+    },
+    {
+        "id": "7",
+        "name": "College - Medicine",
+        "cost": 20000.00,
+        "infra_type": "College",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 13,
+        "effect_time": 30,
+        "monthly_cost": 4000.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "name": "College - Biology Courses",
+        "cost": 20000.00,
+        "infra_type": "College",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 13,
+        "effect_time": 30,
+        "monthly_cost": 4000.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "name": "College - Human and Biology Courses",
+        "cost": 20000.00,
+        "infra_type": "College",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 13,
+        "effect_time": 30,
+        "monthly_cost": 4000.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "name": "University",
+        "cost": 20000.00,
+        "infra_type": "University",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 13,
+        "effect_time": 30,
+        "monthly_cost": 4000.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },{
+        "id": "7",
+        "name": "Technological Research Center",
+        "cost": 20000.00,
+        "infra_type": "University",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 13,
+        "effect_time": 30,
+        "monthly_cost": 4000.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "name": "Small Park",
+        "cost": 1000.00,
+        "infra_type": "Park",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "name": "Medium Park",
+        "cost": 1000.00,
+        "infra_type": "Park",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Big Park",
+        "cost": 1000.00,
+        "infra_type": "Park",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Football Stadium",
+        "cost": 1000.00,
+        "infra_type": "Entertainment",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Theatre",
+        "cost": 1000.00,
+        "infra_type": "Entertainment",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Small Police Station",
+        "cost": 1000.00,
+        "infra_type": "Police",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Small Police Station",
+        "cost": 1000.00,
+        "infra_type": "Police",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Big Police Station",
+        "cost": 1000.00,
+        "infra_type": "Police",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Main Investigation Bureau",
+        "cost": 1000.00,
+        "infra_type": "Police",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Small Prison",
+        "cost": 1000.00,
+        "infra_type": "Police",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Big Prison",
+        "cost": 1000.00,
+        "infra_type": "Police",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Patent Organization",
+        "cost": 1000.00,
+        "infra_type": "BurecracyDepartment",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Company Registration",
+        "cost": 1000.00,
+        "infra_type": "BurecracyDepartment",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Small Port",
+        "cost": 1000.00,
+        "infra_type": "Port",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Big Port",
+        "cost": 1000.00,
+        "infra_type": "Port",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Small Airport",
+        "cost": 1000.00,
+        "infra_type": "Airport",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Medium Airport",
+        "cost": 1000.00,
+        "infra_type": "Airport",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "International Airport",
+        "cost": 1000.00,
+        "infra_type": "Airport",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Fire Department",
+        "cost": 1000.00,
+        "infra_type": "FireDepartment",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Street",
+        "cost": 1000.00,
+        "infra_type": "Street",
+        "amount": 1,
+        "amount_name": "m",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Avenue",
+        "cost": 1000.00,
+        "infra_type": "Street",
+        "amount": 1,
+        "amount_name": "m",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Big Avenue",
+        "cost": 1000.00,
+        "infra_type": "Street",
+        "amount": 1,
+        "amount_name": "m",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Two way Single Road",
+        "cost": 1000.00,
+        "infra_type": "Road",
+        "amount": 1,
+        "amount_name": "m",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Highway",
+        "cost": 1000.00,
+        "infra_type": "Road",
+        "amount": 1,
+        "amount_name": "m",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Big Highway",
+        "cost": 1000.00,
+        "infra_type": "Road",
+        "amount": 1,
+        "amount_name": "m",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Toll Booth",
+        "cost": 1000.00,
+        "infra_type": "Toll",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Small Court",
+        "cost": 1000.00,
+        "infra_type": "Justice",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Big Court",
+        "cost": 1000.00,
+        "infra_type": "Justice",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Regional Justice",
+        "cost": 1000.00,
+        "infra_type": "Justice",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Small Causes Department",
+        "cost": 1000.00,
+        "infra_type": "Justice",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Food Regulation Institute",
+        "cost": 1000.00,
+        "infra_type": "Justice",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Business Regulation Institute",
+        "cost": 1000.00,
+        "infra_type": "Justice",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Public Special Attorney",
+        "cost": 1000.00,
+        "infra_type": "Justice",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
     }
     
 ]
