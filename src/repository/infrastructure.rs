@@ -37,7 +37,7 @@ pub enum InfraType {
 }
 
 #[derive(Deserialize, Serialize)]
-struct RankingEffect {
+pub struct RankingEffect {
     index: String,
     score: f64
 }

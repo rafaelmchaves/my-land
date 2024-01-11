@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Education boost",
+        "description": "Determine that everyone by legal age will need to the school as mandatory.",
+        "cost_for_apply": 10000,
+        "citizen_cost": 0,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    },
+    {
+        "title": "University cost",
+        "description": "Determine how much the citizens should to pay for university.(in percentage)",
+        "cost_for_apply": 0,
+        "citizen_cost": 0,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ]
+    }
+]
