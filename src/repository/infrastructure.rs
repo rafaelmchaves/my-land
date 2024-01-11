@@ -42,10 +42,10 @@ pub struct RankingEffect {
     score: f64
 }
 
-pub fn read_file(input_path: &str) -> Result<Vec<Infrastructure>, std::io::Error> {
+pub fn get_all_infrastructures() -> Result<Vec<Infrastructure>, std::io::Error> {
 
     let infrastructure = {
-        let text = std::fs::read_to_string(&input_path)?;
+        let text = std::fs::read_to_string("infra.json")?;
 
         // Load the InfrastructureFile structure from the string.
         serde_json::from_str::<Vec<Infrastructure>>(&text).unwrap()
