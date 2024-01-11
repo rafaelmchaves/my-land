@@ -852,6 +852,120 @@
         ],
         "description": "",
         "max_usage": 3000
+    },
+    {
+        "id": "10",
+        "name": "Sewage Pipes",
+        "cost": 10.00,
+        "infra_type": "Sewage",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
+    },
+    {
+        "id": "10",
+        "name": "Sewage Treatment Station",
+        "cost": 10.00,
+        "infra_type": "Sewage",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
+    },
+    {
+        "id": "10",
+        "name": "Coal Power Plant",
+        "cost": 10.00,
+        "infra_type": "PowerPlant",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
+    },
+    {
+        "id": "10",
+        "name": "Oil Power Plant",
+        "cost": 10.00,
+        "infra_type": "PowerPlant",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
+    },
+    {
+        "id": "10",
+        "name": "Wind Power Plant",
+        "cost": 10.00,
+        "infra_type": "PowerPlant",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
+    },
+    {
+        "id": "10",
+        "name": "Solar Power Plant",
+        "cost": 10.00,
+        "infra_type": "PowerPlant",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
     }
     
 ]

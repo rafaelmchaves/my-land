@@ -1,6 +1,9 @@
 use crate::repository::{policy, ranking, infrastructure};
+use crate::ui::menu::open;
 
 mod repository;
+mod ui;
+
 fn main() {
     println!("Hello, world!");
 
@@ -11,4 +14,6 @@ fn main() {
     policy::get_all_policies();
     
     ranking::get_ranking_by_name_and_year("health", "1880");
+
+    open();
 }
