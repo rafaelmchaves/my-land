@@ -1,0 +1,27 @@
+[
+    {
+        "name": "England",
+        "score": 34.54,
+        "position": 1
+    },
+    {
+        "name": "France",
+        "score": 34.24,
+        "position": 2
+    },
+    {
+        "name": "United States",
+        "score": 33.67,
+        "position": 3
+    },
+    {
+        "name": "Germany",
+        "score": 33.37,
+        "position": 4
+    },
+    {
+        "name": "Spain",
+        "score": 30.43,
+        "position": 5
+    }
+]
