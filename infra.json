@@ -988,6 +988,25 @@
     },
     {
         "id": "10",
+        "name": "Freight Train Station",
+        "cost": 10.00,
+        "infra_type": "RailRoad",
+        "amount": 1,
+        "amount_name": "unit",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
+    },
+    {
+        "id": "10",
         "name": "Train Line",
         "cost": 10.00,
         "infra_type": "RailRoad",
