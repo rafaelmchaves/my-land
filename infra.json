@@ -1023,6 +1023,44 @@
         ],
         "description": "",
         "max_usage": 3000
+    },
+    {
+        "id": "10",
+        "name": "Subway Station",
+        "cost": 10.00,
+        "infra_type": "Subway",
+        "amount": 1,
+        "amount_name": "Km",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
+    },
+    {
+        "id": "10",
+        "name": "Subway Line",
+        "cost": 10.00,
+        "infra_type": "Subway",
+        "amount": 1,
+        "amount_name": "Km",
+        "building_time": 4,
+        "effect_time": 4,
+        "monthly_cost": 600.00,
+        "ranking_effects": [
+            {
+                "index": "EDUCATION_INDEX",
+                "score": 5
+            }
+        ],
+        "description": "",
+        "max_usage": 3000
     }
     
 ]

@@ -36,7 +36,8 @@ pub enum InfraType {
     Entertainment,
     PowerPlant,
     Sewage,
-    RailRoad
+    RailRoad,
+    Subway
 }
 
 #[derive(Deserialize, Serialize)]
