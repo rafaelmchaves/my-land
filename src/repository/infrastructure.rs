@@ -33,7 +33,11 @@ pub enum InfraType {
     Airport,
     Port,
     Toll,
-    Entertainment
+    Entertainment,
+    PowerPlant,
+    Sewage,
+    RailRoad,
+    Subway
 }
 
 #[derive(Deserialize, Serialize)]
