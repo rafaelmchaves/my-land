@@ -13,6 +13,10 @@
             {
                 "index": "HEALTH_INDEX",
                 "score": 5.23
+            },
+            {
+                "index": "HAPPINESS",
+                "score": 2.23
             }
         ],
         "description": "Small size hospital",

@@ -446,7 +446,7 @@ mod menu {
                             align_items: AlignItems::Center,
                             ..default()
                         },
-                        background_color: Color::BLUE.into(),
+                        background_color: Color::RED.into(),
                         ..default()
                     })
                     //Into this menu area, it will create all children of menu(text, and buttons)
