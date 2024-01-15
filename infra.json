@@ -1002,8 +1002,12 @@
         "monthly_cost": 600.00,
         "ranking_effects": [
             {
-                "index": "EDUCATION_INDEX",
-                "score": 5
+                "index": "TRAFFIC_JAM",
+                "score": 0.5
+            },
+            {
+                "index": "HAPPINESS",
+                "score": 1
             }
         ],
         "description": "",
@@ -1021,8 +1025,12 @@
         "monthly_cost": 600.00,
         "ranking_effects": [
             {
-                "index": "EDUCATION_INDEX",
-                "score": 5
+                "index": "TRAFFIC_JAM",
+                "score": 0.5
+            },
+            {
+                "index": "HAPPINESS",
+                "score": 1
             }
         ],
         "description": "",
@@ -1040,12 +1048,16 @@
         "monthly_cost": 600.00,
         "ranking_effects": [
             {
-                "index": "EDUCATION_INDEX",
-                "score": 5
+                "index": "TRAFFIC_JAM",
+                "score": 0.5
+            },
+            {
+                "index": "HAPPINESS",
+                "score": 1
             }
         ],
         "description": "",
-        "max_usage": 3000
+        "max_usage": 2000
     },
     {
         "id": "10",
@@ -1059,12 +1071,12 @@
         "monthly_cost": 600.00,
         "ranking_effects": [
             {
-                "index": "EDUCATION_INDEX",
-                "score": 5
+                "index": "TRAFFIC_JAM",
+                "score": 0.01
             }
         ],
         "description": "",
-        "max_usage": 3000
+        "max_usage": 0
     }
     
 ]
