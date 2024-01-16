@@ -1039,13 +1039,13 @@
     {
         "id": "10",
         "name": "Subway Station",
-        "cost": 10.00,
+        "cost": 1000.00,
         "infra_type": "Subway",
         "amount": 1,
         "amount_name": "Km",
-        "building_time": 4,
+        "building_time": 6,
         "effect_time": 4,
-        "monthly_cost": 600.00,
+        "monthly_cost": 500.00,
         "ranking_effects": [
             {
                 "index": "TRAFFIC_JAM",
@@ -1062,17 +1062,29 @@
     {
         "id": "10",
         "name": "Subway Line",
-        "cost": 10.00,
+        "cost": 100.00,
         "infra_type": "Subway",
         "amount": 1,
         "amount_name": "Km",
-        "building_time": 4,
+        "building_time": 2,
         "effect_time": 4,
-        "monthly_cost": 600.00,
+        "monthly_cost": 20.00,
         "ranking_effects": [
             {
                 "index": "TRAFFIC_JAM",
                 "score": 0.01
+            },
+            {
+                "index": "HAPPINESS",
+                "score": 0.01
+            },
+            {
+                "index": "POLLUTION",
+                "score": -0.01
+            },
+            {
+                "index": "PIB",
+                "score": 0.001
             }
         ],
         "description": "",
