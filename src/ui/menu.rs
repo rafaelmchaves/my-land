@@ -50,6 +50,7 @@ fn setup(mut commands: Commands) {
 }
 
 mod splash {
+
     use bevy::prelude::*;
 
     use super::{despawn_screen, GameState};
@@ -123,7 +124,9 @@ mod splash {
 }
 
 mod game {
-    use bevy::{prelude::*, app};
+    use bevy::prelude::*;
+
+    use crate::core::generate_next_turn;
 
     use super::{despawn_screen, GameState, TEXT_COLOR};
 
@@ -161,7 +164,7 @@ mod game {
         for (interaction, menu_button_action) in &interaction_query {
             if *interaction == Interaction::Pressed {
                 match menu_button_action {
-                    ButtonEventsAction::Advance => {println!("Advance button")},
+                    ButtonEventsAction::Advance => {generate_next_turn()},
                     ButtonEventsAction::BackMenu => {
                         game_state.set(GameState::Menu);
                     }

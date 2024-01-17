@@ -3,6 +3,7 @@ use crate::ui::menu::open;
 
 mod repository;
 mod ui;
+mod core;
 
 fn main() {
     println!("Hello, world!");
