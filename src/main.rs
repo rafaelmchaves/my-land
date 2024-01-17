@@ -9,7 +9,7 @@ fn main() {
 
     let object = infrastructure::get_all_infrastructures();
 
-    infrastructure::write_file(object.unwrap());
+    // infrastructure::write_file(object.unwrap());
 
     policy::get_all_policies();
     

@@ -123,18 +123,40 @@ mod splash {
 }
 
 mod game {
-    use bevy::prelude::*;
+    use bevy::{prelude::*, app};
 
-    use super::{despawn_screen, DisplayQuality, GameState, Volume, TEXT_COLOR};
+    use super::{despawn_screen, GameState, TEXT_COLOR};
+
+    const HOVERED_PRESSED_BUTTON: Color = Color::rgb(0.25, 0.65, 0.25);
+    const PRESSED_BUTTON: Color = Color::rgb(0.35, 0.75, 0.35);
+
+    fn game_button(
+        mut interaction_query: Query<
+            (&Interaction, &mut BackgroundColor),
+            (Changed<Interaction>, With<Button>),
+        >,
+    ) {
+        for (interaction, mut color) in &mut interaction_query {
+            *color = match *interaction {
+                Interaction::Pressed | Interaction::None => PRESSED_BUTTON.into(),
+                Interaction::Hovered => HOVERED_PRESSED_BUTTON.into()
+            }
+        }
+    }
 
     // This plugin will contain the game. In this case, it's just be a screen that will
     // display the current settings for 5 seconds before returning to the menu
     pub struct GamePlugin;
-
+    
     impl Plugin for GamePlugin {
+
         fn build(&self, app: &mut App) {
             app.add_systems(OnEnter(GameState::Game), game_setup)
-                .add_systems(OnExit(GameState::Game), despawn_screen::<OnGameScreen>);
+                .add_systems(OnExit(GameState::Game), despawn_screen::<OnGameScreen>)
+                .add_systems(
+                Update,
+                game_button.run_if(in_state(GameState::Game))
+            );
         }
     }
 
