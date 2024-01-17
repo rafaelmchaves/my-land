@@ -144,8 +144,33 @@ mod game {
         }
     }
 
-    // This plugin will contain the game. In this case, it's just be a screen that will
-    // display the current settings for 5 seconds before returning to the menu
+    #[derive(Component)]
+    enum ButtonEventsAction {
+        Advance,
+        BackMenu
+    }
+
+    fn game_button_events(
+        interaction_query: Query<
+            (&Interaction, &ButtonEventsAction),
+            (Changed<Interaction>, With<Button>),
+        >,
+
+        mut game_state: ResMut<NextState<GameState>>,
+    ) {
+        for (interaction, menu_button_action) in &interaction_query {
+            if *interaction == Interaction::Pressed {
+                match menu_button_action {
+                    ButtonEventsAction::Advance => {println!("Advance button")},
+                    ButtonEventsAction::BackMenu => {
+                        game_state.set(GameState::Menu);
+                    }
+                }
+            }
+        }
+    }
+
+    // This plugin will contain the game.
     pub struct GamePlugin;
     
     impl Plugin for GamePlugin {
@@ -155,7 +180,7 @@ mod game {
                 .add_systems(OnExit(GameState::Game), despawn_screen::<OnGameScreen>)
                 .add_systems(
                 Update,
-                game_button.run_if(in_state(GameState::Game))
+                (game_button_events, game_button).run_if(in_state(GameState::Game))
             );
         }
     }
@@ -230,11 +255,13 @@ mod game {
                     .with_children(|parent| {
                         // Display a advanced button in the right bottom
                         parent
-                              .spawn(ButtonBundle {
+                              .spawn((ButtonBundle {
                                     style: button_style.clone(),
                                     background_color: ADVANCE_BUTTON.into(),
                                     ..default()
-                                })
+                                },
+                                ButtonEventsAction::Advance,
+                              ))
                             .with_children(|parent| {
                                 let icon = asset_server.load("right.png");
                                 parent.spawn(ImageBundle {
@@ -248,11 +275,12 @@ mod game {
                                 ));
                             });
                         parent
-                            .spawn(ButtonBundle {
+                            .spawn((ButtonBundle {
                                   style: button_style.clone(),
                                   background_color: ADVANCE_BUTTON.into(),
                                   ..default()
-                              })
+                              }, ButtonEventsAction::BackMenu
+                            ))
                           .with_children(|parent| {
                               parent.spawn(TextBundle::from_section(
                                   "Back to menu",
@@ -267,7 +295,7 @@ mod game {
 }
 
 mod menu {
-    use bevy::{app::AppExit, prelude::*, text};
+    use bevy::{app::AppExit, prelude::*};
 
     use super::{despawn_screen, DisplayQuality, GameState, Volume, TEXT_COLOR};
 
