@@ -223,7 +223,6 @@ mod game {
             ..default()
         };
         const ADVANCE_BUTTON: Color = Color::rgb(0.22, 0.15, 0.15);
-
         commands
             .spawn((
                 NodeBundle {
@@ -240,6 +239,69 @@ mod game {
                 OnGameScreen,
             ))
             .with_children(|parent| {
+
+                parent
+                    .spawn(NodeBundle {
+                        style: Style {
+                            // This will display its children in a column, from top to bottom
+                            flex_direction: FlexDirection::Column,
+                            // `align_items` will align children on the cross axis. Here the main axis is
+                            // vertical (column), so the cross axis is horizontal. This will center the
+                            // children
+                            align_items: AlignItems::Center,
+                            ..default()
+                        },
+                        background_color: Color::BLACK.into(),
+                        ..default()
+                    }).with_children(|parent: &mut ChildBuilder<'_, '_, '_>| {
+                        parent.spawn((ButtonBundle {
+                                style: button_style.clone(),
+                                background_color: ADVANCE_BUTTON.into(),
+                                ..default()
+                            },
+                            ButtonEventsAction::Advance,
+                          ))
+                        .with_children(|parent| {
+                            let icon = asset_server.load("right.png");
+                            parent.spawn(ImageBundle {
+                                style: button_icon_style.clone(),
+                                image: UiImage::new(icon),
+                                ..default()
+                            });
+                            parent.spawn(TextBundle::from_section(
+                                "Infra button",
+                                button_text_style.clone(),
+                            ));
+                        });
+
+                        parent.spawn(NodeBundle {
+                            style: Style {
+                                flex_direction: FlexDirection::Column,
+                                align_items: AlignItems::Center,
+                                ..default()
+                            },
+                            background_color: Color::RED.into(),
+                            ..default()
+                        })
+                    
+                        .with_children(|parent| {
+                            // Display the game name
+                            parent.spawn(
+                                TextBundle::from_section(
+                                    "News",
+                                    TextStyle {
+                                        font_size: 80.0,
+                                        color: TEXT_COLOR,
+                                        ..default()
+                                    },
+                                )
+                                .with_style(Style {
+                                    margin: UiRect::all(Val::Px(350.0)),
+                                    ..default()
+                                }),
+                            );
+                        });
+                    });
                 // First create a `NodeBundle` for centering what we want to display
                 parent
                     .spawn(NodeBundle {
@@ -257,8 +319,20 @@ mod game {
                     })
                     .with_children(|parent| {
                         // Display a advanced button in the right bottom
-                        parent
-                              .spawn((ButtonBundle {
+                        parent.spawn(NodeBundle {
+                            style: Style {
+                                // This will display its children in a column, from top to bottom
+                                flex_direction: FlexDirection::Column,
+                                // `align_items` will align children on the cross axis. Here the main axis is
+                                // vertical (column), so the cross axis is horizontal. This will center the
+                                // children
+                                align_items: AlignItems::End,
+                                ..default()
+                            },
+                            background_color: Color::BLACK.into(),
+                            ..default()
+                        }).with_children(|parent: &mut ChildBuilder<'_, '_, '_>| {
+                            parent.spawn((ButtonBundle {
                                     style: button_style.clone(),
                                     background_color: ADVANCE_BUTTON.into(),
                                     ..default()
@@ -290,6 +364,9 @@ mod game {
                                   button_text_style.clone(),
                               ));
                           });
+                        });
+
+                        
                     });
             });
   
