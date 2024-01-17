@@ -3,13 +3,14 @@ use crate::ui::menu::open;
 
 mod repository;
 mod ui;
+mod core;
 
 fn main() {
     println!("Hello, world!");
 
     let object = infrastructure::get_all_infrastructures();
 
-    infrastructure::write_file(object.unwrap());
+    // infrastructure::write_file(object.unwrap());
 
     policy::get_all_policies();
     

@@ -50,6 +50,7 @@ fn setup(mut commands: Commands) {
 }
 
 mod splash {
+
     use bevy::prelude::*;
 
     use super::{despawn_screen, GameState};
@@ -79,7 +80,7 @@ mod splash {
     struct SplashTimer(Timer);
 
     fn splash_setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-        let icon = asset_server.load("branding/icon.png");
+        let icon = asset_server.load("my-land-icon.png");
         // Display the logo
         commands
             .spawn((
@@ -125,17 +126,65 @@ mod splash {
 mod game {
     use bevy::prelude::*;
 
-    use super::{despawn_screen, DisplayQuality, GameState, Volume, TEXT_COLOR};
+    use crate::core::generate_next_turn;
 
-    // This plugin will contain the game. In this case, it's just be a screen that will
-    // display the current settings for 5 seconds before returning to the menu
+    use super::{despawn_screen, GameState, TEXT_COLOR};
+
+    const HOVERED_PRESSED_BUTTON: Color = Color::rgb(0.25, 0.65, 0.25);
+    const PRESSED_BUTTON: Color = Color::rgb(0.35, 0.75, 0.35);
+
+    fn game_button(
+        mut interaction_query: Query<
+            (&Interaction, &mut BackgroundColor),
+            (Changed<Interaction>, With<Button>),
+        >,
+    ) {
+        for (interaction, mut color) in &mut interaction_query {
+            *color = match *interaction {
+                Interaction::Pressed | Interaction::None => PRESSED_BUTTON.into(),
+                Interaction::Hovered => HOVERED_PRESSED_BUTTON.into()
+            }
+        }
+    }
+
+    #[derive(Component)]
+    enum ButtonEventsAction {
+        Advance,
+        BackMenu
+    }
+
+    fn game_button_events(
+        interaction_query: Query<
+            (&Interaction, &ButtonEventsAction),
+            (Changed<Interaction>, With<Button>),
+        >,
+
+        mut game_state: ResMut<NextState<GameState>>,
+    ) {
+        for (interaction, menu_button_action) in &interaction_query {
+            if *interaction == Interaction::Pressed {
+                match menu_button_action {
+                    ButtonEventsAction::Advance => {generate_next_turn()},
+                    ButtonEventsAction::BackMenu => {
+                        game_state.set(GameState::Menu);
+                    }
+                }
+            }
+        }
+    }
+
+    // This plugin will contain the game.
     pub struct GamePlugin;
-
+    
     impl Plugin for GamePlugin {
+
         fn build(&self, app: &mut App) {
             app.add_systems(OnEnter(GameState::Game), game_setup)
-                .add_systems(Update, game.run_if(in_state(GameState::Game)))
-                .add_systems(OnExit(GameState::Game), despawn_screen::<OnGameScreen>);
+                .add_systems(OnExit(GameState::Game), despawn_screen::<OnGameScreen>)
+                .add_systems(
+                Update,
+                (game_button_events, game_button).run_if(in_state(GameState::Game))
+            );
         }
     }
 
@@ -148,9 +197,33 @@ mod game {
 
     fn game_setup(
         mut commands: Commands,
-        display_quality: Res<DisplayQuality>,
-        volume: Res<Volume>,
+        asset_server: Res<AssetServer>
     ) {
+
+        let button_style = Style {
+            width: Val::Px(250.0),
+            height: Val::Px(65.0),
+            margin: UiRect::all(Val::Px(20.0)),
+            justify_content: JustifyContent::Center,
+            align_items: AlignItems::Center,
+            ..default()
+        };
+
+        let button_icon_style = Style {
+            width: Val::Px(30.0),
+            // This takes the icons out of the flexbox flow, to be positioned exactly
+            position_type: PositionType::Absolute,
+            // The icon will be close to the left border of the button
+            left: Val::Px(10.0),
+            ..default()
+        };
+        let button_text_style = TextStyle {
+            font_size: 40.0,
+            color: TEXT_COLOR,
+            ..default()
+        };
+        const ADVANCE_BUTTON: Color = Color::rgb(0.22, 0.15, 0.15);
+
         commands
             .spawn((
                 NodeBundle {
@@ -183,73 +256,49 @@ mod game {
                         ..default()
                     })
                     .with_children(|parent| {
-                        // Display two lines of text, the second one with the current settings
-                        parent.spawn(
-                            TextBundle::from_section(
-                                "Will be back to the menu shortly...",
-                                TextStyle {
-                                    font_size: 80.0,
-                                    color: TEXT_COLOR,
+                        // Display a advanced button in the right bottom
+                        parent
+                              .spawn((ButtonBundle {
+                                    style: button_style.clone(),
+                                    background_color: ADVANCE_BUTTON.into(),
                                     ..default()
                                 },
-                            )
-                            .with_style(Style {
-                                margin: UiRect::all(Val::Px(50.0)),
-                                ..default()
-                            }),
-                        );
-                        parent.spawn(
-                            TextBundle::from_sections([
-                                TextSection::new(
-                                    format!("quality: {:?}", *display_quality),
-                                    TextStyle {
-                                        font_size: 60.0,
-                                        color: Color::BLUE,
-                                        ..default()
-                                    },
-                                ),
-                                TextSection::new(
-                                    " - ",
-                                    TextStyle {
-                                        font_size: 60.0,
-                                        color: TEXT_COLOR,
-                                        ..default()
-                                    },
-                                ),
-                                TextSection::new(
-                                    format!("volume: {:?}", *volume),
-                                    TextStyle {
-                                        font_size: 60.0,
-                                        color: Color::GREEN,
-                                        ..default()
-                                    },
-                                ),
-                            ])
-                            .with_style(Style {
-                                margin: UiRect::all(Val::Px(50.0)),
-                                ..default()
-                            }),
-                        );
+                                ButtonEventsAction::Advance,
+                              ))
+                            .with_children(|parent| {
+                                let icon = asset_server.load("right.png");
+                                parent.spawn(ImageBundle {
+                                    style: button_icon_style.clone(),
+                                    image: UiImage::new(icon),
+                                    ..default()
+                                });
+                                parent.spawn(TextBundle::from_section(
+                                    "Advance",
+                                    button_text_style.clone(),
+                                ));
+                            });
+                        parent
+                            .spawn((ButtonBundle {
+                                  style: button_style.clone(),
+                                  background_color: ADVANCE_BUTTON.into(),
+                                  ..default()
+                              }, ButtonEventsAction::BackMenu
+                            ))
+                          .with_children(|parent| {
+                              parent.spawn(TextBundle::from_section(
+                                  "Back to menu",
+                                  button_text_style.clone(),
+                              ));
+                          });
                     });
             });
-        // Spawn a 5 seconds timer to trigger going back to the menu
-        commands.insert_resource(GameTimer(Timer::from_seconds(5.0, TimerMode::Once)));
+  
     }
 
-    // Tick the timer, and change state when finished
-    fn game(
-        time: Res<Time>,
-        mut game_state: ResMut<NextState<GameState>>,
-        mut timer: ResMut<GameTimer>,
-    ) {
-        if timer.tick(time.delta()).finished() {
-            game_state.set(GameState::Menu);
-        }
-    }
 }
 
 mod menu {
-    use bevy::{app::AppExit, prelude::*, text};
+    use bevy::{app::AppExit, prelude::*};
 
     use super::{despawn_screen, DisplayQuality, GameState, Volume, TEXT_COLOR};
 
