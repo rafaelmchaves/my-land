@@ -79,7 +79,7 @@ mod splash {
     struct SplashTimer(Timer);
 
     fn splash_setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-        let icon = asset_server.load("branding/icon.png");
+        let icon = asset_server.load("my-land-icon.png");
         // Display the logo
         commands
             .spawn((
@@ -134,7 +134,6 @@ mod game {
     impl Plugin for GamePlugin {
         fn build(&self, app: &mut App) {
             app.add_systems(OnEnter(GameState::Game), game_setup)
-                .add_systems(Update, game.run_if(in_state(GameState::Game)))
                 .add_systems(OnExit(GameState::Game), despawn_screen::<OnGameScreen>);
         }
     }
@@ -148,9 +147,33 @@ mod game {
 
     fn game_setup(
         mut commands: Commands,
-        display_quality: Res<DisplayQuality>,
-        volume: Res<Volume>,
+        asset_server: Res<AssetServer>
     ) {
+
+        let button_style = Style {
+            width: Val::Px(250.0),
+            height: Val::Px(65.0),
+            margin: UiRect::all(Val::Px(20.0)),
+            justify_content: JustifyContent::Center,
+            align_items: AlignItems::Center,
+            ..default()
+        };
+
+        let button_icon_style = Style {
+            width: Val::Px(30.0),
+            // This takes the icons out of the flexbox flow, to be positioned exactly
+            position_type: PositionType::Absolute,
+            // The icon will be close to the left border of the button
+            left: Val::Px(10.0),
+            ..default()
+        };
+        let button_text_style = TextStyle {
+            font_size: 40.0,
+            color: TEXT_COLOR,
+            ..default()
+        };
+        const ADVANCE_BUTTON: Color = Color::rgb(0.22, 0.15, 0.15);
+
         commands
             .spawn((
                 NodeBundle {
@@ -183,69 +206,42 @@ mod game {
                         ..default()
                     })
                     .with_children(|parent| {
-                        // Display two lines of text, the second one with the current settings
-                        parent.spawn(
-                            TextBundle::from_section(
-                                "Will be back to the menu shortly...",
-                                TextStyle {
-                                    font_size: 80.0,
-                                    color: TEXT_COLOR,
+                        // Display a advanced button in the right bottom
+                        parent
+                              .spawn(ButtonBundle {
+                                    style: button_style.clone(),
+                                    background_color: ADVANCE_BUTTON.into(),
                                     ..default()
-                                },
-                            )
-                            .with_style(Style {
-                                margin: UiRect::all(Val::Px(50.0)),
-                                ..default()
-                            }),
-                        );
-                        parent.spawn(
-                            TextBundle::from_sections([
-                                TextSection::new(
-                                    format!("quality: {:?}", *display_quality),
-                                    TextStyle {
-                                        font_size: 60.0,
-                                        color: Color::BLUE,
-                                        ..default()
-                                    },
-                                ),
-                                TextSection::new(
-                                    " - ",
-                                    TextStyle {
-                                        font_size: 60.0,
-                                        color: TEXT_COLOR,
-                                        ..default()
-                                    },
-                                ),
-                                TextSection::new(
-                                    format!("volume: {:?}", *volume),
-                                    TextStyle {
-                                        font_size: 60.0,
-                                        color: Color::GREEN,
-                                        ..default()
-                                    },
-                                ),
-                            ])
-                            .with_style(Style {
-                                margin: UiRect::all(Val::Px(50.0)),
-                                ..default()
-                            }),
-                        );
+                                })
+                            .with_children(|parent| {
+                                let icon = asset_server.load("right.png");
+                                parent.spawn(ImageBundle {
+                                    style: button_icon_style.clone(),
+                                    image: UiImage::new(icon),
+                                    ..default()
+                                });
+                                parent.spawn(TextBundle::from_section(
+                                    "Advance",
+                                    button_text_style.clone(),
+                                ));
+                            });
+                        parent
+                            .spawn(ButtonBundle {
+                                  style: button_style.clone(),
+                                  background_color: ADVANCE_BUTTON.into(),
+                                  ..default()
+                              })
+                          .with_children(|parent| {
+                              parent.spawn(TextBundle::from_section(
+                                  "Back to menu",
+                                  button_text_style.clone(),
+                              ));
+                          });
                     });
             });
-        // Spawn a 5 seconds timer to trigger going back to the menu
-        commands.insert_resource(GameTimer(Timer::from_seconds(5.0, TimerMode::Once)));
+  
     }
 
-    // Tick the timer, and change state when finished
-    fn game(
-        time: Res<Time>,
-        mut game_state: ResMut<NextState<GameState>>,
-        mut timer: ResMut<GameTimer>,
-    ) {
-        if timer.tick(time.delta()).finished() {
-            game_state.set(GameState::Menu);
-        }
-    }
 }
 
 mod menu {
