@@ -209,6 +209,15 @@ mod game {
             ..default()
         };
 
+        let button_game_actions_style = Style {
+            width: Val::Px(52.0),
+            height: Val::Px(35.0),
+            margin: UiRect::all(Val::Px(20.0)),
+            justify_content: JustifyContent::Center,
+            align_items: AlignItems::Center,
+            ..default()
+        };
+
         let button_icon_style = Style {
             width: Val::Px(30.0),
             // This takes the icons out of the flexbox flow, to be positioned exactly
@@ -223,7 +232,6 @@ mod game {
             ..default()
         };
         const ADVANCE_BUTTON: Color = Color::rgb(0.22, 0.15, 0.15);
-
         commands
             .spawn((
                 NodeBundle {
@@ -240,7 +248,109 @@ mod game {
                 OnGameScreen,
             ))
             .with_children(|parent| {
-                // First create a `NodeBundle` for centering what we want to display
+
+                parent
+                    .spawn(NodeBundle {
+                        style: Style {
+                            // This will display its children in a column, from top to bottom
+                            flex_direction: FlexDirection::Column,
+                            // `align_items` will align children on the cross axis. Here the main axis is
+                            // vertical (column), so the cross axis is horizontal. This will center the
+                            // children
+                            align_items: AlignItems::Center,
+                            ..default()
+                        },
+                        background_color: Color::BLACK.into(),
+                        ..default()
+                    }).with_children(|parent: &mut ChildBuilder<'_, '_, '_>| {
+
+                        //Create the horizontal bar with buttom actions(policies, budget and build etc) in the top of the screen
+                        parent
+                            .spawn(NodeBundle {
+                                style: Style {
+                                flex_direction: FlexDirection::Row,
+                                align_items: AlignItems::Center,
+                                ..default()
+                            },
+                            background_color: Color::BLACK.into(),
+                            ..default()
+                        }).with_children(|parent: &mut ChildBuilder<'_, '_, '_>| {
+                            parent.spawn((ButtonBundle {
+                                    style: button_game_actions_style.clone(),
+                                    background_color: ADVANCE_BUTTON.into(),
+                                    ..default()
+                                },
+                                ButtonEventsAction::Advance,
+                            ))
+                            .with_children(|parent| {
+                                let icon = asset_server.load("infra.png");
+                                parent.spawn(ImageBundle {
+                                    style: button_icon_style.clone(),
+                                    image: UiImage::new(icon),
+                                    ..default()
+                                });
+                            });
+                            parent.spawn((ButtonBundle {
+                                style: button_game_actions_style.clone(),
+                                background_color: ADVANCE_BUTTON.into(),
+                                ..default()
+                            },
+                            ButtonEventsAction::Advance,
+                            ))
+                            .with_children(|parent| {
+                                let icon = asset_server.load("budget.png");
+                                parent.spawn(ImageBundle {
+                                    style: button_icon_style.clone(),
+                                    image: UiImage::new(icon),
+                                    ..default()
+                                });
+                            });
+                            parent.spawn((ButtonBundle {
+                                style: button_game_actions_style,
+                                background_color: ADVANCE_BUTTON.into(),
+                                ..default()
+                            },
+                                ButtonEventsAction::Advance,
+                            )).with_children(|parent| {
+                                let icon = asset_server.load("policies.png");
+                                parent.spawn(ImageBundle {
+                                    style: button_icon_style.clone(),
+                                    image: UiImage::new(icon),
+                                    ..default()
+                                });
+                            });
+                        });
+
+                        //Create the game area
+                        parent.spawn(NodeBundle {
+                            style: Style {
+                                flex_direction: FlexDirection::Column,
+                                align_items: AlignItems::Center,
+                                ..default()
+                            },
+                            background_color: Color::RED.into(),
+                            ..default()
+                        })
+                    
+                        .with_children(|parent| {
+                            // Display the game name
+                            parent.spawn(
+                                TextBundle::from_section(
+                                    "Game Area",
+                                    TextStyle {
+                                        font_size: 80.0,
+                                        color: TEXT_COLOR,
+                                        ..default()
+                                    },
+                                )
+                                .with_style(Style {
+                                    margin: UiRect::all(Val::Px(350.0)),
+                                    ..default()
+                                }),
+                            );
+                        });
+                    });
+                // Create the action menu in the bottom with the Advance and back to menu buttons
                 parent
                     .spawn(NodeBundle {
                         style: Style {
@@ -257,8 +367,20 @@ mod game {
                     })
                     .with_children(|parent| {
                         // Display a advanced button in the right bottom
-                        parent
-                              .spawn((ButtonBundle {
+                        parent.spawn(NodeBundle {
+                            style: Style {
+                                // This will display its children in a column, from top to bottom
+                                flex_direction: FlexDirection::Column,
+                                // `align_items` will align children on the cross axis. Here the main axis is
+                                // vertical (column), so the cross axis is horizontal. This will center the
+                                // children
+                                align_items: AlignItems::End,
+                                ..default()
+                            },
+                            background_color: Color::BLACK.into(),
+                            ..default()
+                        }).with_children(|parent: &mut ChildBuilder<'_, '_, '_>| {
+                            parent.spawn((ButtonBundle {
                                     style: button_style.clone(),
                                     background_color: ADVANCE_BUTTON.into(),
                                     ..default()
@@ -290,6 +412,8 @@ mod game {
                                   button_text_style.clone(),
                               ));
                           });
+                        });
+                        
                     });
             });
   
