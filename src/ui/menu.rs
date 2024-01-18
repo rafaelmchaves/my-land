@@ -209,6 +209,15 @@ mod game {
             ..default()
         };
 
+        let button_game_actions_style = Style {
+            width: Val::Px(52.0),
+            height: Val::Px(35.0),
+            margin: UiRect::all(Val::Px(20.0)),
+            justify_content: JustifyContent::Center,
+            align_items: AlignItems::Center,
+            ..default()
+        };
+
         let button_icon_style = Style {
             width: Val::Px(30.0),
             // This takes the icons out of the flexbox flow, to be positioned exactly
@@ -254,26 +263,65 @@ mod game {
                         background_color: Color::BLACK.into(),
                         ..default()
                     }).with_children(|parent: &mut ChildBuilder<'_, '_, '_>| {
-                        parent.spawn((ButtonBundle {
-                                style: button_style.clone(),
+
+                        //Create the horizontal bar with buttom actions(policies, budget and build etc) in the top of the screen
+                        parent
+                            .spawn(NodeBundle {
+                                style: Style {
+                                flex_direction: FlexDirection::Row,
+                                align_items: AlignItems::Center,
+                                ..default()
+                            },
+                            background_color: Color::BLACK.into(),
+                            ..default()
+                        }).with_children(|parent: &mut ChildBuilder<'_, '_, '_>| {
+                            parent.spawn((ButtonBundle {
+                                    style: button_game_actions_style.clone(),
+                                    background_color: ADVANCE_BUTTON.into(),
+                                    ..default()
+                                },
+                                ButtonEventsAction::Advance,
+                            ))
+                            .with_children(|parent| {
+                                let icon = asset_server.load("infra.png");
+                                parent.spawn(ImageBundle {
+                                    style: button_icon_style.clone(),
+                                    image: UiImage::new(icon),
+                                    ..default()
+                                });
+                            });
+                            parent.spawn((ButtonBundle {
+                                style: button_game_actions_style.clone(),
                                 background_color: ADVANCE_BUTTON.into(),
                                 ..default()
                             },
                             ButtonEventsAction::Advance,
-                          ))
-                        .with_children(|parent| {
-                            let icon = asset_server.load("right.png");
-                            parent.spawn(ImageBundle {
-                                style: button_icon_style.clone(),
-                                image: UiImage::new(icon),
-                                ..default()
+                            ))
+                            .with_children(|parent| {
+                                let icon = asset_server.load("budget.png");
+                                parent.spawn(ImageBundle {
+                                    style: button_icon_style.clone(),
+                                    image: UiImage::new(icon),
+                                    ..default()
+                                });
                             });
-                            parent.spawn(TextBundle::from_section(
-                                "Infra button",
-                                button_text_style.clone(),
-                            ));
+                            parent.spawn((ButtonBundle {
+                                style: button_game_actions_style,
+                                background_color: ADVANCE_BUTTON.into(),
+                                ..default()
+                            },
+                                ButtonEventsAction::Advance,
+                            )).with_children(|parent| {
+                                let icon = asset_server.load("policies.png");
+                                parent.spawn(ImageBundle {
+                                    style: button_icon_style.clone(),
+                                    image: UiImage::new(icon),
+                                    ..default()
+                                });
+                            });
                         });
 
+                        //Create the game area
                         parent.spawn(NodeBundle {
                             style: Style {
                                 flex_direction: FlexDirection::Column,
@@ -288,7 +336,7 @@ mod game {
                             // Display the game name
                             parent.spawn(
                                 TextBundle::from_section(
-                                    "News",
+                                    "Game Area",
                                     TextStyle {
                                         font_size: 80.0,
                                         color: TEXT_COLOR,
@@ -302,7 +350,7 @@ mod game {
                             );
                         });
                     });
-                // First create a `NodeBundle` for centering what we want to display
+                // Create the action menu in the bottom with the Advance and back to menu buttons
                 parent
                     .spawn(NodeBundle {
                         style: Style {
@@ -365,7 +413,6 @@ mod game {
                               ));
                           });
                         });
-
                         
                     });
             });
