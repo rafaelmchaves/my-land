@@ -1,3 +1,5 @@
+pub mod population;
+
 pub fn generate_next_turn() {
 
     // TODO call generate_population method
