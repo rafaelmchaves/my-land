@@ -1,9 +1,10 @@
 pub mod population;
 
-pub fn generate_next_turn() {
+pub fn generate_next_turn(memory_data: MemoryData) {
 
-    // TODO call generate_population method
-    // TODO call generate_complainings
+    population::generate_population(memory_data);
+    
+    population::generate_complainings(memory_data);
     // TODO call generate_news
     // TODO Check if an infrastructure is completed, and show in the next turn as ready. Add this infrastructure in the ready list, and start to count the effect time.
     // TODO Check if an infrastructure reached the effect time, and change the score.
@@ -11,4 +12,8 @@ pub fn generate_next_turn() {
     // TODO Calculate the incomes and expenses.
 
     println!("advance to the next turn")
+}
+
+struct MemoryData {
+
 }
