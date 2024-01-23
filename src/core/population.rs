@@ -17,7 +17,7 @@ struct Complain {
     date: String
 }
 
-pub fn generate_population(memory_data: MemoryData) {
+pub fn generate_population(memory_data: &MemoryData) {
 
     //TODO get the birthrate and mortality rate.
     //TODO verify if there is a policy about the controll of birth
@@ -26,6 +26,6 @@ pub fn generate_population(memory_data: MemoryData) {
 
 }
 
-pub fn generate_complainings(memory_data: MemoryData) {
+pub fn generate_complainings(memory_data: &MemoryData) {
     
 }
