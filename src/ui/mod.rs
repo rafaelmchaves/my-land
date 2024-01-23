@@ -2,9 +2,6 @@ pub mod menu;
 pub mod splash;
 pub mod game;
 
-
-// #![allow(clippy::type_complexity)]
-
 use bevy::prelude::*;
 
 use self::{splash::splash::SplashPlugin, menu::menu::MenuPlugin, game::game::GamePlugin};
