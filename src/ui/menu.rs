@@ -126,7 +126,7 @@ mod splash {
 mod game {
     use bevy::prelude::*;
 
-    use crate::core::generate_next_turn;
+    use crate::core::{generate_next_turn, MemoryData};
 
     use super::{despawn_screen, GameState, TEXT_COLOR};
 
@@ -164,7 +164,7 @@ mod game {
         for (interaction, menu_button_action) in &interaction_query {
             if *interaction == Interaction::Pressed {
                 match menu_button_action {
-                    ButtonEventsAction::Advance => {generate_next_turn()},
+                    ButtonEventsAction::Advance => {generate_next_turn(MemoryData {  })},
                     ButtonEventsAction::BackMenu => {
                         game_state.set(GameState::Menu);
                     }

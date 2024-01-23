@@ -14,6 +14,6 @@ pub fn generate_next_turn(memory_data: MemoryData) {
     println!("advance to the next turn")
 }
 
-struct MemoryData {
+pub struct MemoryData {
 
 }
