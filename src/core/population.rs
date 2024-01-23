@@ -9,7 +9,7 @@ struct Person {
     gender: String
 }
 
-struct Complain {
+struct Complaint {
     id: String,
     title: String,
     description: String,
