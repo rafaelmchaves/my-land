@@ -1,11 +1,5 @@
-//! This example will display a simple menu using Bevy UI where you can start a new game,
-//! change some settings or quit. There is no actual game, it will just display the current
-//! settings for 5 seconds before going back to the menu.
-
-// This lint usually gives bad advice in the context of Bevy -- hiding complex queries behind
-// type aliases tends to obfuscate code while offering no improvement in code cleanliness.
-
-
+//! This code will display a simple menu using Bevy UI where you can start a new game, load game,
+//! change some settings or quit.
 pub mod menu {
     use bevy::{app::AppExit, prelude::*};
 
