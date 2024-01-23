@@ -4,8 +4,6 @@ pub mod splash {
 
     use crate::ui::{GameState, despawn_screen};
 
-    // use crate::{despawn_screen, GameState};
-
     // This plugin will display a splash screen with Bevy logo for 1 second before switching to the menu
     pub struct SplashPlugin;
 
