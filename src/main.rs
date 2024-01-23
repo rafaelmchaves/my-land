@@ -1,5 +1,5 @@
 use crate::repository::{policy, ranking, infrastructure};
-use crate::ui::menu::open;
+use crate::ui::open;
 
 mod repository;
 mod ui;
