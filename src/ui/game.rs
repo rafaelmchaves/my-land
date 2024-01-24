@@ -27,7 +27,15 @@ pub mod game {
     #[derive(Component)]
     enum ButtonEventsAction {
         Advance,
-        BackMenu
+        BackMenu,
+        Infrastructure,
+    }
+
+    #[derive(States, Clone, Copy, Default, Eq, PartialEq, Debug, Hash)]
+    enum ClickedAction {
+        #[default]
+        NothingClicked,
+        Infrastructure
     }
 
     fn game_button_events(
@@ -37,6 +45,7 @@ pub mod game {
         >,
 
         mut game_state: ResMut<NextState<GameState>>,
+        mut button_clicked:  ResMut<NextState<ClickedAction>>
     ) {
         for (interaction, menu_button_action) in &interaction_query {
             if *interaction == Interaction::Pressed {
@@ -45,6 +54,7 @@ pub mod game {
                     ButtonEventsAction::BackMenu => {
                         game_state.set(GameState::Menu);
                     }
+                    ButtonEventsAction::Infrastructure => {button_clicked.set(ClickedAction::Infrastructure)}
                 }
             }
         }
@@ -52,7 +62,8 @@ pub mod game {
 
     // This plugin will contain the game.
     pub struct GamePlugin;
-    
+    use crate::core;
+
     impl Plugin for GamePlugin {
 
         fn build(&self, app: &mut App) {
@@ -63,10 +74,13 @@ pub mod game {
                 .add_systems(
                 Update, 
                 (game_button_events, game_button).run_if(in_state(GameState::Game)))
-                .insert_resource(infras);
+                .insert_resource(infras)
+                .add_state::<ClickedAction>()
+                .add_systems(OnEnter(ClickedAction::Infrastructure), core::add_game_infra );
         }
     }
 
+    
     // Tag component used to tag entities added on the game screen
     #[derive(Component)]
     struct OnGameScreen;
@@ -159,7 +173,7 @@ pub mod game {
                                     background_color: ADVANCE_BUTTON.into(),
                                     ..default()
                                 },
-                                ButtonEventsAction::Advance,
+                                ButtonEventsAction::Infrastructure,
                             ))
                             .with_children(|parent| {
                                 let icon = asset_server.load("infra.png");

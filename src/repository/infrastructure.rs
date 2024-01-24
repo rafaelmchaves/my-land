@@ -1,11 +1,11 @@
 use bevy::ecs::system::Resource;
 use serde_derive::{Serialize, Deserialize};
 
-#[derive(Deserialize, Serialize, Resource)]
+#[derive(Deserialize, Serialize, Resource, Debug)]
 pub struct Infrastructure {
-    id: String,
-    name: String,
-    infra_type: InfraType,
+    pub id: String,
+    pub name: String,
+    pub infra_type: InfraType,
     amount: f64,
     amount_name: String,
     cost: f64,
@@ -17,12 +17,12 @@ pub struct Infrastructure {
     max_usage: u32 //max number of people that this infrastructure supports
 }
 
-#[derive(Deserialize, Serialize, Resource)]
+#[derive(Deserialize, Serialize, Resource, Debug)]
 pub struct Infrastructures {
     pub list: Vec<Infrastructure>
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub enum InfraType {
     Road,
     Street,
@@ -46,7 +46,7 @@ pub enum InfraType {
     Subway
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct RankingEffect {
     index: String,
     score: f64

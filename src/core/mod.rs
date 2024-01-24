@@ -1,3 +1,6 @@
+use crate::repository::infrastructure::Infrastructures;
+use bevy::prelude::*;
+
 pub mod population;
 
 pub fn generate_next_turn() {
@@ -12,4 +15,10 @@ pub fn generate_next_turn() {
     // TODO Calculate the incomes and expenses.
 
     println!("advance to the next turn")
+}
+
+pub fn add_game_infra(infra: Res<Infrastructures>) {
+    
+    println!("add_game_infra {:?}", infra);
+    println!("name: {} ", infra.list.get(0).take().unwrap().name)
 }
