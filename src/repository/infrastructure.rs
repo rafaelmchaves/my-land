@@ -1,6 +1,7 @@
+use bevy::ecs::system::Resource;
 use serde_derive::{Serialize, Deserialize};
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Resource)]
 pub struct Infrastructure {
     id: String,
     name: String,
@@ -14,6 +15,11 @@ pub struct Infrastructure {
     ranking_effects: Vec<RankingEffect>,
     description: String,
     max_usage: u32 //max number of people that this infrastructure supports
+}
+
+#[derive(Deserialize, Serialize, Resource)]
+pub struct Infrastructures {
+    pub list: Vec<Infrastructure>
 }
 
 #[derive(Deserialize, Serialize)]
@@ -56,6 +62,7 @@ pub fn get_all_infrastructures() -> Result<Vec<Infrastructure>, std::io::Error> 
 
     };
 
+    println!("Loaded all infrasctructres!");
     Ok(infrastructure)
     
 }

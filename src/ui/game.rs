@@ -2,6 +2,8 @@ pub mod game {
     use bevy::prelude::*;
 
     use crate::core::generate_next_turn;
+    
+    use crate::repository::infrastructure::{self, Infrastructures};
 
     use crate::ui::{despawn_screen, GameState, TEXT_COLOR};
 
@@ -54,12 +56,14 @@ pub mod game {
     impl Plugin for GamePlugin {
 
         fn build(&self, app: &mut App) {
+
+            let infras = Infrastructures { list: (infrastructure::get_all_infrastructures()).unwrap() };
             app.add_systems(OnEnter(GameState::Game), game_setup)
                 .add_systems(OnExit(GameState::Game), despawn_screen::<OnGameScreen>)
                 .add_systems(
-                Update,
-                (game_button_events, game_button).run_if(in_state(GameState::Game))
-            );
+                Update, 
+                (game_button_events, game_button).run_if(in_state(GameState::Game)))
+                .insert_resource(infras);
         }
     }
 
