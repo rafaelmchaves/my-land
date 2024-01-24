@@ -1,7 +1,5 @@
 //file that it will have all population logical rules such as complain generation, population generate, demography and many others.
 
-use super::MemoryData;
-
 struct Person {
     id: String,
     birthdate: String,
@@ -21,7 +19,7 @@ struct Demography {
     
 }
 
-pub fn generate_population(memory_data: &MemoryData) {
+pub fn generate_population() {
 
     //TODO get the birthrate and mortality rate.
     //TODO apply the calculation of birthrate and mortality rate.
@@ -29,6 +27,6 @@ pub fn generate_population(memory_data: &MemoryData) {
 
 }
 
-pub fn generate_complainings(memory_data: &MemoryData) {
+pub fn generate_complainings() {
     
 }
