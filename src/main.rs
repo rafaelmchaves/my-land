@@ -1,4 +1,4 @@
-use crate::repository::{policy, ranking, infrastructure};
+use crate::repository::{policy, ranking};
 use crate::ui::open;
 
 mod repository;
@@ -6,9 +6,6 @@ mod ui;
 mod core;
 
 fn main() {
-    println!("Hello, world!");
-
-    // infrastructure::write_file(object.unwrap());
 
     policy::get_all_policies();
     
