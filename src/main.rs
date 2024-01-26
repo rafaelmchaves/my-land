@@ -15,21 +15,13 @@ fn main() -> io::Result<()> {
     policy::get_all_policies();
         
     ranking::get_ranking_by_name_and_year("health", "1880");
-    
+
     while option!= "-1".to_string() {
     
-        if option == "1" {
-            build_infrastructure_options();
-        } 
-        if option == "2" {
-            build_policy_options();
-        } 
-        if option == "3" {
-
-        }
-        else {
-            
-            build_initial_menu(&mut option);
+        match option.as_str() {
+             "1" => build_infrastructure_options(&mut option),
+             "2" => build_policy_options(&mut option),
+               _ => build_initial_menu(&mut option),
         }
         
     // open();
@@ -46,19 +38,38 @@ fn build_initial_menu(option: &mut String) {
     *option = std::io::stdin().lines().next().unwrap().unwrap();
 }
 
-fn build_infrastructure_options() {
+fn build_infrastructure_options(option: &mut String) {
     println!("Select one of the options below:");
     println!("1 - Build a Small hospital");
     println!("2 - Build a Big Hospital");
     println!("3 - Build a School");
     println!("-1 - Return to the previous menu");
-    let option = std::io::stdin().lines().next().unwrap().unwrap();
+    *option = std::io::stdin().lines().next().unwrap().unwrap();
+    match option.as_str() {
+        "1" => build_policy_x(),
+          _ => println!("returning to menu")
+    }
+
+    *option = "0".to_string();
 
 }
 
-fn build_policy_options() {
+fn build_policy_options(option: &mut String) {
     println!("Select one of the options below:");
     println!("1 - Add a policy x");
     println!("-1 - Return to the previous menu");
-    let option = std::io::stdin().lines().next().unwrap().unwrap();
+    *option = std::io::stdin().lines().next().unwrap().unwrap();
+    match option.as_str() {
+        "1" => build_policy_x(),
+          _ => println!("returning to menu")
+    }
+
+    *option = "0".to_string();
+  
+}
+
+fn build_policy_x() {
+    println!("");
+    println!("build_policy_x");
+    println!("");
 }
