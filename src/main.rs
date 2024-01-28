@@ -42,13 +42,13 @@ fn build_infrastructure_options(option: &mut String) {
 
     let infra_result = infrastructure::get_all_infrastructures();
     if infra_result.is_ok() {
-        infra_result.unwrap();
+        let infra_list = infra_result.unwrap();
     
-
         println!("Select one of the options below:");
-        println!("1 - Build a Small hospital");
-        println!("2 - Build a Big Hospital");
-        println!("3 - Build a School");
+        for item in infra_list {
+            println!("{} - Build {}", item.id, item.name);
+        }
+        
         println!("-1 - Return to the previous menu");
         *option = std::io::stdin().lines().next().unwrap().unwrap();
         match option.as_str() {
