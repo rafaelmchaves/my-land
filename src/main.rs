@@ -1,4 +1,4 @@
-use crate::repository::{policy, ranking};
+use crate::repository::{policy, ranking, infrastructure};
 use crate::ui::open;
 use std::io;
 
@@ -39,15 +39,24 @@ fn build_initial_menu(option: &mut String) {
 }
 
 fn build_infrastructure_options(option: &mut String) {
-    println!("Select one of the options below:");
-    println!("1 - Build a Small hospital");
-    println!("2 - Build a Big Hospital");
-    println!("3 - Build a School");
-    println!("-1 - Return to the previous menu");
-    *option = std::io::stdin().lines().next().unwrap().unwrap();
-    match option.as_str() {
-        "1" => build_policy_x(),
-          _ => println!("returning to menu")
+
+    let infra_result = infrastructure::get_all_infrastructures();
+    if infra_result.is_ok() {
+        infra_result.unwrap();
+    
+
+        println!("Select one of the options below:");
+        println!("1 - Build a Small hospital");
+        println!("2 - Build a Big Hospital");
+        println!("3 - Build a School");
+        println!("-1 - Return to the previous menu");
+        *option = std::io::stdin().lines().next().unwrap().unwrap();
+        match option.as_str() {
+            "1" => build_policy_x(),
+            _ => println!("returning to menu")
+        }
+    } else {
+        println!("It was not found any infrastructure. Try again");
     }
 
     *option = "0".to_string();
