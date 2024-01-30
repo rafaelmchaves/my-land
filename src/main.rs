@@ -1,7 +1,7 @@
 use repository::infrastructure::Infrastructure;
 
 use crate::repository::{policy, ranking, infrastructure};
-use crate::ui::{open, game};
+use crate::ui::{open};
 use std::io;
 
 mod repository;
