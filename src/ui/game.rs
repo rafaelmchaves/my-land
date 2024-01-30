@@ -50,7 +50,7 @@ pub mod game {
         for (interaction, menu_button_action) in &interaction_query {
             if *interaction == Interaction::Pressed {
                 match menu_button_action {
-                    ButtonEventsAction::Advance => {generate_next_turn()},
+                    ButtonEventsAction::Advance => {generate_next_turn(&mut crate::GameData { building_list: vec![], in_construction_buildings: vec![] })},
                     ButtonEventsAction::BackMenu => {
                         game_state.set(GameState::Menu);
                     }

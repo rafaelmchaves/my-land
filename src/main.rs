@@ -1,7 +1,8 @@
 use repository::infrastructure::Infrastructure;
 
+use crate::core::generate_next_turn;
 use crate::repository::{policy, ranking, infrastructure};
-use crate::ui::{open};
+use crate::ui::open;
 use std::io;
 
 mod repository;
@@ -32,6 +33,7 @@ fn main() -> io::Result<()> {
         match option.as_str() {
              "1" => build_infrastructure_options(&mut option, &mut game_data),
              "2" => build_policy_options(&mut option),
+             "5" => advance_next_turn(&mut game_data, &mut option),
                _ => build_initial_menu(&mut option),
         }
         
@@ -42,6 +44,11 @@ fn main() -> io::Result<()> {
     Ok(())
 }
 
+fn advance_next_turn(game_data: &mut GameData, option: &mut String) {
+    *option = "0".to_string();
+    build_initial_menu(option);
+    generate_next_turn(game_data);
+}
 fn build_initial_menu(option: &mut String) {
     println!("Select one of the options below:");
     println!("1 - Build an infrastructure");
