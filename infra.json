@@ -231,7 +231,7 @@
         "description": "",
         "max_usage": 3000
     },{
-        "id": "7",
+        "id": "13",
         "name": "Technological Research Center",
         "cost": 20000.00,
         "infra_type": "University",
@@ -250,7 +250,7 @@
         "max_usage": 3000
     },
     {
-        "id": "8",
+        "id": "14",
         "name": "Small Park",
         "cost": 1000.00,
         "infra_type": "Park",
@@ -269,7 +269,7 @@
         "max_usage": 3000
     },
     {
-        "id": "9",
+        "id": "15",
         "name": "Medium Park",
         "cost": 1000.00,
         "infra_type": "Park",
@@ -288,7 +288,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "16",
         "name": "Big Park",
         "cost": 1000.00,
         "infra_type": "Park",
@@ -307,7 +307,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "17",
         "name": "Football Stadium",
         "cost": 1000.00,
         "infra_type": "Entertainment",
@@ -326,7 +326,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "18",
         "name": "Theatre",
         "cost": 1000.00,
         "infra_type": "Entertainment",
@@ -345,7 +345,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "19",
         "name": "Small Police Station",
         "cost": 1000.00,
         "infra_type": "Police",
@@ -364,7 +364,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "20",
         "name": "Small Police Station",
         "cost": 1000.00,
         "infra_type": "Police",
@@ -383,7 +383,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "21",
         "name": "Big Police Station",
         "cost": 1000.00,
         "infra_type": "Police",
@@ -402,7 +402,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "22",
         "name": "Main Investigation Bureau",
         "cost": 1000.00,
         "infra_type": "Police",
@@ -421,7 +421,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "23",
         "name": "Small Prison",
         "cost": 1000.00,
         "infra_type": "Police",
@@ -440,7 +440,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "24",
         "name": "Big Prison",
         "cost": 1000.00,
         "infra_type": "Police",
@@ -459,7 +459,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "25",
         "name": "Patent Organization",
         "cost": 1000.00,
         "infra_type": "BureaucracyDepartment",
@@ -478,7 +478,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "26",
         "name": "Company Registration",
         "cost": 1000.00,
         "infra_type": "BureaucracyDepartment",
@@ -497,7 +497,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "27",
         "name": "Small Port",
         "cost": 1000.00,
         "infra_type": "Port",
@@ -516,7 +516,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "28",
         "name": "Big Port",
         "cost": 1000.00,
         "infra_type": "Port",
@@ -535,7 +535,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "29",
         "name": "Small Airport",
         "cost": 1000.00,
         "infra_type": "Airport",
@@ -554,7 +554,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "30",
         "name": "Medium Airport",
         "cost": 1000.00,
         "infra_type": "Airport",
@@ -573,7 +573,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "31",
         "name": "International Airport",
         "cost": 1000.00,
         "infra_type": "Airport",
@@ -592,7 +592,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "32",
         "name": "Fire Department",
         "cost": 1000.00,
         "infra_type": "FireDepartment",
@@ -611,7 +611,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "33",
         "name": "Street",
         "cost": 1000.00,
         "infra_type": "Street",
@@ -630,7 +630,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "34",
         "name": "Avenue",
         "cost": 1000.00,
         "infra_type": "Street",
@@ -649,7 +649,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "35",
         "name": "Big Avenue",
         "cost": 1000.00,
         "infra_type": "Street",
@@ -668,7 +668,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "36",
         "name": "Two way Single Road",
         "cost": 1000.00,
         "infra_type": "Road",
@@ -687,7 +687,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "37",
         "name": "Highway",
         "cost": 1000.00,
         "infra_type": "Road",
@@ -706,7 +706,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "38",
         "name": "Big Highway",
         "cost": 1000.00,
         "infra_type": "Road",
@@ -725,7 +725,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "39",
         "name": "Toll Booth",
         "cost": 1000.00,
         "infra_type": "Toll",
@@ -744,7 +744,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "40",
         "name": "Small Court",
         "cost": 1000.00,
         "infra_type": "Justice",
@@ -763,7 +763,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "41",
         "name": "Big Court",
         "cost": 1000.00,
         "infra_type": "Justice",
@@ -782,7 +782,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "42",
         "name": "Regional Justice",
         "cost": 1000.00,
         "infra_type": "Justice",
@@ -801,7 +801,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "43",
         "name": "Small Causes Department",
         "cost": 1000.00,
         "infra_type": "Justice",
@@ -820,7 +820,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "44",
         "name": "Food Regulation Institute",
         "cost": 1000.00,
         "infra_type": "Justice",
@@ -839,7 +839,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "46",
         "name": "Business Regulation Institute",
         "cost": 1000.00,
         "infra_type": "Justice",
@@ -858,7 +858,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "47",
         "name": "Public Special Attorney",
         "cost": 1000.00,
         "infra_type": "Justice",
@@ -877,7 +877,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "48",
         "name": "Sewage Pipes",
         "cost": 10.00,
         "infra_type": "Sewage",
@@ -896,7 +896,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "49",
         "name": "Sewage Treatment Station",
         "cost": 10.00,
         "infra_type": "Sewage",
@@ -915,7 +915,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "50",
         "name": "Coal Power Plant",
         "cost": 10.00,
         "infra_type": "PowerPlant",
@@ -934,7 +934,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "51",
         "name": "Oil Power Plant",
         "cost": 10.00,
         "infra_type": "PowerPlant",
@@ -953,7 +953,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "52",
         "name": "Wind Power Plant",
         "cost": 10.00,
         "infra_type": "PowerPlant",
@@ -972,7 +972,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "53",
         "name": "Solar Power Plant",
         "cost": 10.00,
         "infra_type": "PowerPlant",
@@ -991,7 +991,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "54",
         "name": "Train Station",
         "cost": 10.00,
         "infra_type": "RailRoad",
@@ -1010,7 +1010,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "55",
         "name": "Freight Train Station",
         "cost": 10.00,
         "infra_type": "RailRoad",
@@ -1033,7 +1033,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "56",
         "name": "Train Line",
         "cost": 10.00,
         "infra_type": "RailRoad",
@@ -1056,7 +1056,7 @@
         "max_usage": 3000
     },
     {
-        "id": "10",
+        "id": "57",
         "name": "Subway Station",
         "cost": 1000.00,
         "infra_type": "Subway",
@@ -1079,7 +1079,7 @@
         "max_usage": 2000
     },
     {
-        "id": "10",
+        "id": "58",
         "name": "Subway Line",
         "cost": 100.00,
         "infra_type": "Subway",
