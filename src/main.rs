@@ -1,14 +1,23 @@
 use repository::infrastructure::Infrastructure;
 
 use crate::repository::{policy, ranking, infrastructure};
-use crate::ui::open;
+use crate::ui::{open, game};
 use std::io;
 
 mod repository;
 mod ui;
 mod core;
 
+struct GameData {
+     building_list: Vec<Infrastructure>,
+     in_construction_buildings: Vec<Infrastructure>
+}
 fn main() -> io::Result<()> {
+
+    let mut game_data:GameData = GameData {
+        building_list: vec![],
+        in_construction_buildings: vec![]
+    };   
 
     let mut option:String = String::new();
 
@@ -21,13 +30,15 @@ fn main() -> io::Result<()> {
     while option!= "-1".to_string() {
     
         match option.as_str() {
-             "1" => build_infrastructure_options(&mut option),
+             "1" => build_infrastructure_options(&mut option, &mut game_data),
              "2" => build_policy_options(&mut option),
                _ => build_initial_menu(&mut option),
         }
         
     // open();
     }
+
+    println!("Buildings in the list: {:?}", game_data.in_construction_buildings);
     Ok(())
 }
 
@@ -37,10 +48,11 @@ fn build_initial_menu(option: &mut String) {
     println!("2 - Add a policy");
     println!("3 - Budget");
     println!("4 - Informations about your city");
+    println!("5 - Advance to the next turn");
     *option = std::io::stdin().lines().next().unwrap().unwrap();
 }
 
-fn build_infrastructure_options(option: &mut String) {
+fn build_infrastructure_options(option: &mut String, game_data: &mut GameData) {
 
     let infra_result = infrastructure::get_all_infrastructures();
     if infra_result.is_ok() {
@@ -64,6 +76,7 @@ fn build_infrastructure_options(option: &mut String) {
                     create_confirmation_selected(&item, &mut option_confirmation);
                     if option_confirmation.as_str() == "y" {
                         *option = "y".to_string();
+                        game_data.in_construction_buildings.push(item.clone());
                         println!("we will start to build the {}", item.name)
                     }
                     
