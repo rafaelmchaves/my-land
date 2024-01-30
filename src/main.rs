@@ -56,16 +56,15 @@ fn build_infrastructure_options(option: &mut String) {
             *option = std::io::stdin().lines().next().unwrap().unwrap();
             if option.as_str() != "-1" {
 
-                
                 let infra_selected = select_infrastructure(&infra_list, option);
-
                 if (&infra_selected).is_some() {
                 
+                    let item = infra_selected.unwrap();
                     let mut option_confirmation:String = String::new();
-                    create_confirmation_selected(&infra_selected, &mut option_confirmation);
+                    create_confirmation_selected(&item, &mut option_confirmation);
                     if option_confirmation.as_str() == "y" {
                         *option = "y".to_string();
-                        println!("Item has built")
+                        println!("we will start to build the {}", item.name)
                     }
                     
                 } else {
@@ -83,8 +82,7 @@ fn build_infrastructure_options(option: &mut String) {
 
 }
 
-fn create_confirmation_selected(infra_selected: &Option<Infrastructure>, option: &mut String) {
-    let item = (infra_selected.clone()).unwrap();
+fn create_confirmation_selected(item: &Infrastructure, option: &mut String) {
     println!("-----------------------------------------");
     println!("The element that you want to build is: ");
     println!("Name: {}", item.name);
