@@ -110,6 +110,7 @@ fn create_confirmation_selected(item: &Infrastructure, option: &mut String) {
     println!("Time to build: {} weeks", item.building_time);
     println!("Time to take effect after built: {} weeks", item.effect_time);
     println!("Monthly cost: ${} ", item.monthly_cost);
+    println!("Max people that infra supports: {} ", item.max_usage);
 
     println!("Do you want to build? y/n ");
     *option = std::io::stdin().lines().next().unwrap().unwrap();

@@ -14,7 +14,7 @@ pub struct Infrastructure {
     pub effect_time: u8,
     ranking_effects: Vec<RankingEffect>,
     description: String,
-    max_usage: u32 //max number of people that this infrastructure supports
+    pub max_usage: u32 //max number of people that this infrastructure supports
 }
 
 #[derive(Deserialize, Serialize, Resource, Debug)]
