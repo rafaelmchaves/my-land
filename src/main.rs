@@ -54,7 +54,7 @@ fn build_initial_menu(option: &mut String) {
     println!("1 - Build an infrastructure");
     println!("2 - Add a policy");
     println!("3 - Budget");
-    println!("4 - Informations about your city");
+    println!("4 - Informations about your country");
     println!("5 - Advance to the next turn");
     *option = std::io::stdin().lines().next().unwrap().unwrap();
 }
