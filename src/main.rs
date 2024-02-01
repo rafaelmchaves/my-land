@@ -37,6 +37,7 @@ fn main() -> io::Result<()> {
         match option.as_str() {
              "1" => build_infrastructure_options(&mut option, &mut game_data),
              "2" => build_policy_options(&mut option),
+             "4" => get_country_info(&mut game_data, &mut option),
              "5" => advance_next_turn(&mut game_data, &mut option),
                _ => build_initial_menu(&mut option),
         }
@@ -44,10 +45,20 @@ fn main() -> io::Result<()> {
     // open();
     }
 
-    println!("Buildings in the list: {:?}", game_data.in_construction_buildings);
     Ok(())
 }
 
+fn get_country_info (game_data: &mut GameData, option: &mut String) {
+
+    println!("");
+    println!("----------- Informations about the country ------------------");
+    println!("Buildings in construction: {:?}", game_data.in_construction_buildings);
+    println!("Buildings: {:?}", game_data.building_list);
+    println!("-------------------------------------------------------------");
+    println!("");
+
+    *option = "0".to_string();
+}
 fn advance_next_turn(game_data: &mut GameData, option: &mut String) {
     *option = "0".to_string();
     build_initial_menu(option);
