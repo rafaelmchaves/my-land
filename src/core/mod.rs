@@ -18,7 +18,18 @@ pub fn generate_next_turn(game_data: &mut GameData) {
     // TODO Recalculate the ranking of each index.
     // TODO Calculate the incomes and expenses.
 
-    println!("advance to the next turn")
+    advance_time(game_data);
+
+    println!("advanced to the next turn, week: {}, year: {} ", game_data.week, game_data.year)
+}
+
+fn advance_time(game_data: &mut GameData) {
+    if game_data.week == 52 {
+        game_data.year += 1;
+        game_data.week = 1;
+    } else {
+        game_data.week +=1;
+    }
 }
 
 pub fn add_game_infra(infra: Res<Infrastructures>) {

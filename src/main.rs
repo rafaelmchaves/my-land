@@ -11,13 +11,17 @@ mod core;
 
 struct GameData {
      building_list: Vec<Infrastructure>,
-     in_construction_buildings: Vec<Infrastructure>
+     in_construction_buildings: Vec<Infrastructure>,
+     week: u8,
+     year: u16
 }
 fn main() -> io::Result<()> {
 
     let mut game_data:GameData = GameData {
         building_list: vec![],
-        in_construction_buildings: vec![]
+        in_construction_buildings: vec![], 
+        week: 1,
+        year: 1880
     };   
 
     let mut option:String = String::new();
@@ -49,6 +53,7 @@ fn advance_next_turn(game_data: &mut GameData, option: &mut String) {
     build_initial_menu(option);
     generate_next_turn(game_data);
 }
+
 fn build_initial_menu(option: &mut String) {
     println!("Select one of the options below:");
     println!("1 - Build an infrastructure");
