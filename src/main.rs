@@ -59,6 +59,7 @@ fn get_country_info (game_data: &mut GameData, option: &mut String) {
 
     *option = "0".to_string();
 }
+
 fn advance_next_turn(game_data: &mut GameData, option: &mut String) {
     *option = "0".to_string();
     build_initial_menu(option);

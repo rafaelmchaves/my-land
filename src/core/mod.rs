@@ -1,4 +1,4 @@
-use crate::{repository::infrastructure::Infrastructures, GameData};
+use crate::{repository::{infrastructure::Infrastructures, ranking}, GameData};
 use bevy::prelude::*;
 
 pub mod population;
@@ -35,6 +35,7 @@ fn advance_time(game_data: &mut GameData) {
     if game_data.week == 52 {
         game_data.year += 1;
         game_data.week = 1;
+        ranking::get_ranking_by_name_and_year("ranking/health", game_data.year.to_string().as_str()).unwrap();
         //TODO load the new ranking of countries for each index in that new year
     } else {
         game_data.week +=1;
