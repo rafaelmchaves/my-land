@@ -1,9 +1,9 @@
 use repository::infrastructure::Infrastructure;
-
 use crate::core::generate_next_turn;
 use crate::repository::{policy, ranking, infrastructure};
 use crate::ui::open;
 use std::io;
+use std::collections::HashMap;
 
 mod repository;
 mod ui;
@@ -13,17 +13,47 @@ struct GameData {
      building_list: Vec<Infrastructure>,
      in_construction_buildings: Vec<Infrastructure>,
      week: u8,
-     year: u16
+     year: u16,
+     budget: Budget
 }
+
+struct Budget {
+    balance: f64,
+    expenses: HashMap<String, Expense>,
+    incomes: HashMap<String, Income>
+
+}
+
+struct Expense {
+    category: String,
+    cost: f64
+}
+
+struct Income {
+    category: String,
+    value: f64
+}
+
+
+impl GameData {
+    fn new() -> GameData {
+        GameData {
+            building_list: vec![],
+            in_construction_buildings: vec![], 
+            week: 1,
+            year: 1880,
+            budget: Budget {
+                balance: 12330.00,
+                expenses: HashMap::new() ,
+                incomes: HashMap::new()
+            }
+        }  
+    }
+}
+
 fn main() -> io::Result<()> {
 
-    let mut game_data:GameData = GameData {
-        building_list: vec![],
-        in_construction_buildings: vec![], 
-        week: 1,
-        year: 1880
-    };   
-
+    let mut game_data = GameData::new();
     let mut option:String = String::new();
 
     println!("--------- Welcome to the game!! ---------");
