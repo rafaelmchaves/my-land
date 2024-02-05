@@ -97,12 +97,16 @@ fn advance_next_turn(game_data: &mut GameData, option: &mut String) {
 }
 
 fn build_initial_menu(option: &mut String) {
+    println!("");
+    println!("---------------------------------------");
     println!("Select one of the options below:");
     println!("1 - Build an infrastructure");
     println!("2 - Add a policy");
     println!("3 - Budget");
     println!("4 - Informations about your country");
     println!("5 - Advance to the next turn");
+    println!("---------------------------------------");
+    println!("");
     *option = std::io::stdin().lines().next().unwrap().unwrap();
 }
 
