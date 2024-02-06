@@ -51,15 +51,7 @@ impl GameData {
 
 fn main() -> io::Result<()> {
 
-    let mut game_data = GameData::new();
-
-    println!("--------- Welcome to the game!! ---------");
-
-    policy::get_all_policies();
-        
-    ranking::get_ranking_by_name_and_year("health", "1880");
-
-    terminal_menu::start(game_data);
+    terminal_menu::start(GameData::new());
 
     Ok(())
 }
