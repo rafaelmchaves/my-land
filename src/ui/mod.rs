@@ -1,6 +1,7 @@
 pub mod menu;
 pub mod splash;
 pub mod game;
+pub mod terminal_menu;
 
 use bevy::prelude::*;
 
@@ -46,7 +47,6 @@ pub fn open() {
 fn setup(mut commands: Commands) {
     commands.spawn(Camera2dBundle::default());
 }
-
 
 // Generic system that takes a component as a parameter, and will despawn all entities with that component
 fn despawn_screen<T: Component>(to_despawn: Query<Entity, With<T>>, mut commands: Commands) {
