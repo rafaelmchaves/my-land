@@ -4,7 +4,8 @@ struct Person {
     id: String,
     birthdate: String,
     name: String,
-    gender: String
+    gender: String,
+    occupation: String
 }
 
 struct Complaint {

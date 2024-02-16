@@ -67,7 +67,7 @@ pub fn get_all_infrastructures() -> Result<Vec<Infrastructure>, std::io::Error> 
     
 }
 
-pub fn write_file(infrastructure: Vec<Infrastructure>) -> Result<(), std::io::Error> {
+pub fn save_infrastructure(infrastructure: Vec<Infrastructure>) -> Result<(), std::io::Error> {
     std::fs::write(
         "file_test.json",
         serde_json::to_string_pretty(&infrastructure).unwrap(),
